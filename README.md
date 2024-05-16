@@ -1,1 +1,3 @@
-# ISIS2603-PP2-jnsuarez
+# Juan Nicolas Suarez
+# Codigo: 202222678
+# Correo: Jn.suarez
