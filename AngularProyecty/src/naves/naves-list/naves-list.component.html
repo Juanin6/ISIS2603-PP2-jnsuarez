@@ -1,0 +1,47 @@
+<nav class="navbar bg-body-tertiary" data-bs-theme="dark" >
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png" alt="Bootstrap" width="30" height="24">
+    </a>
+    <a class="navbar-brand" id="texto" href="#">Naves de rebelion : {{naveRebelion}}   Naves del imperio {{naveImperio}}  Naves neutrales: {{naveNeutral}}</a>
+  </div>
+</nav>
+<div class="container">
+<div class="row">
+  <div class="col-6"></div>
+  <div class="col-3" id="aa"><h1>NAVES</h1></div>
+  <div class="col-3"></div>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+<div   *ngFor="let nave of naves" class="card-3" style="max-width: 540px;">
+    <div class="col-4">
+      <img src="{{nave.imagen}}  " class="img-fluid rounded-start" alt="" (click)="selected(nave)" >
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h5 class="card-title">  {{nave.nombre}} </h5>
+        <p class="text-truncate"> {{nave.descripcion}} </p>
+        <p class="card-text"><small class="text-body-secondary"> {{nave.empresa_fabricacion}} </small></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div   *ngIf="select">
+      <app-naveDetail [naveDetail]="nave"  ></app-naveDetail>
+    </div>
+  </div>
+  </div>
+</div>
+<style>
+  #texto{
+    color: yellow;
+  }
+  #aa{
+    color: black;
+  }
+</style>
+
